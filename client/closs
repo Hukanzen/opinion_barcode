@@ -1,0 +1,8 @@
+#!/bin/bash
+
+export GOOS=darwin
+# export GOOS=linux
+
+export GOARCH=amd64
+
+docker run --rm -v "$PWD"/src:/app -w /app --env GOOS=${GOOS} --env GOARCH=${GOARCH} golang:latest go build -v main.go
